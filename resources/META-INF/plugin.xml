@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>com.yazao.plugin.translate</id>
+  <name>XTranslatePlugin</name>
+  <version>1.0</version>
+  <vendor email="shaopingzhai@163.com" url="https://github.com/yueliangrensheng/XTranslatePlugin">XTranslatePlugin</vendor>
+
+  <description><![CDATA[
+      Plugin for translate English to Chinese.<br>
+      <li>1. Choose the word you want translate.</li>
+      <li>2. Press Command + I.</li>
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <li>1.0.0 XTranslatePlugin have bean published.</li>
+  ]]></change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="XTranslatePlugin" class="com.yazao.plugin.translate.action.XTranslateAction" text="XTranslate"
+            description="translate to Chinese plugin in IntelliJ IDEA">
+      <add-to-group group-id="EditMenu" anchor="first"/>
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="meta I" second-keystroke="shift meta I"/>
+    </action>
+  </actions>
+
+</idea-plugin>
